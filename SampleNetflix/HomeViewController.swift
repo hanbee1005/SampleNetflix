@@ -19,18 +19,18 @@ class HomeViewController: UIViewController {
         if segue.identifier == "award" {
             let destinationVC = segue.destination as? RecommendListViewController
             awardRecommendListViewController = destinationVC
-            // awardRecommendListViewController.viewModel.updateType(.award)
-            // awardRecommendListViewController.viewModel.fetchItems()
+            awardRecommendListViewController.viewModel.updateType(.award)
+            awardRecommendListViewController.viewModel.fetchItems()
         } else if segue.identifier == "hot" {
             let destinationVC = segue.destination as? RecommendListViewController
             hotRecommendListViewController = destinationVC
-            // hotRecommendListViewController.viewModel.updateType(.hot)
-            // hotRecommendListViewController.viewModel.fetchItems()
+            hotRecommendListViewController.viewModel.updateType(.hot)
+            hotRecommendListViewController.viewModel.fetchItems()
         } else if segue.identifier == "my" {
             let destinationVC = segue.destination as? RecommendListViewController
             myRecommendListViewController = destinationVC
-            // myRecommendListViewController.viewModel.updateType(.my)
-            // myRecommendListViewController.viewModel.fetchItems()
+            myRecommendListViewController.viewModel.updateType(.my)
+            myRecommendListViewController.viewModel.fetchItems()
         }
     }
     

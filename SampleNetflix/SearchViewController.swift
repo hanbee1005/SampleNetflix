@@ -6,11 +6,16 @@
 //  Copyright © 2020 kr.co.hist. All rights reserved.
 //
 
+// Kingfisher 참고: https://github.com/onevcat/Kingfisher
+
 import UIKit
 import Kingfisher
 import AVFoundation
+import Firebase
 
 class SearchViewController: UIViewController {
+    
+    let db = Database.database().reference().child("searchHistory")
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultCollectionView: UICollectionView!
@@ -108,6 +113,9 @@ extension SearchViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 self.movies = movies
                 self.resultCollectionView.reloadData()
+                
+                let timestamp: Double = Date().timeIntervalSince1970.rounded() // rounded() 소수점 아래 버림 (.0으로 됨)
+                self.db.childByAutoId().setValue(["term": searchTerm, "timestamp": timestamp]) // firebase db 에 저장
             }
         }
     }

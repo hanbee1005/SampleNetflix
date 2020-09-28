@@ -85,4 +85,9 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+Pods/
+Podfile.lock
+
+SampleNetflix/GoogleService-Info.plist
+
 # End of https://www.toptal.com/developers/gitignore/api/swift
