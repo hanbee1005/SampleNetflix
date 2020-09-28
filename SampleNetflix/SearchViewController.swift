@@ -6,6 +6,8 @@
 //  Copyright © 2020 kr.co.hist. All rights reserved.
 //
 
+// Kingfisher 참고: https://github.com/onevcat/Kingfisher
+
 import UIKit
 import Kingfisher
 import AVFoundation
